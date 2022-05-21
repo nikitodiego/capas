@@ -1,0 +1,17 @@
+<%- layout('layouts/main')%>
+
+
+<form style="margin-left: 15px;" action="/signup" method="POST" enctype="multipart/form-data">
+  <input class="form-label" type="email" name="email" placeholder="Email"><br>
+  <input class="form-label" type="password" name="password" placeholder="Password"><br>
+  <input class="form-label" type="nombre" name="nombre" placeholder="nombre"><br>
+  <input class="form-label" type="edad" name="edad" placeholder="edad"><br>
+  <input class="form-label" type="direccion" name="direccion" placeholder="direccion"><br>
+  <input class="form-label" type="telefono" name="telefono" placeholder="telefono"><br>
+  <input class="form-label" type="avatar" name="avatar" placeholder="avatar.png"><br>
+  <input type="file" name="image"><br>
+  <button class="form-control" style="width: 10%;" type="submit">
+    SignUp
+  </button>
+</form>
+

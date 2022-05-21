@@ -1,0 +1,41 @@
+<%- layout('layouts/main') %>
+<div style="margin-left: 15px;">
+    <h4>Avatar:</h4>
+    <div><img style="height: 120px; width:auto" src=<%= user.avatar %> alt="imagen ilustrativa"></div>
+    <h4>user_id:</h4><div><%= user._id%></div>
+    <h4>user:</h4><div><%= user.email %></div>
+    <h4>crypted password:</h4><div><%= user.password %></div>
+    <h4>Nombre:</h4>
+    <div><%= user.nombre %></div>
+    <h4>Direccion:</h4>
+    <div><%= user.direccion %></div>
+    <h4>Teléfono:</h4>
+    <div><%= user.telefono %></div>
+    <h4>Carrito:</h4>
+    <div><%= carrito._id %></div>
+    <h4>Tus productos:</h4>
+    <% carrito.productos.forEach((datos) => { %>
+    <div><%= datos %></div>
+    <% }) %> <br>
+    
+
+    <form style="margin-left: 15px;" action="/profile" method="POST">
+        <button class="form-control" style="width: 10%;" type="submit">
+            Orden de compra
+        </button>
+    </form><br>
+
+    <h4>Inventario:</h4>
+    <div class="container" >
+        <% productos.forEach((datos) => { %>
+        <div class="card" style="width: 18rem; margin: 1rem; display: inline-block;">
+            <img src=../<%= datos.thumbnail %> class="card-img-top" alt="Imagen ilustrativa" style="height: 200px; width: auto">
+            <div class="card-body" >
+              <h5 class="card-title"><%= datos.title  %></h5>
+              <p class="card-text">id: <%= datos.id  %></p>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+</div>
+
